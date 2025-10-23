@@ -1,6 +1,8 @@
-import { lazy, Suspense } from "react";
+// src/routes/routes.tsx
+import { lazy } from "react";
 import { type RouteObject } from "react-router-dom";
 
+const Layout = lazy(() => import("../layout/Layout"));
 const HomePage = lazy(() => import("../pages/HomePage"));
 // const AboutPage = lazy(() => import("../pages/AboutPage"));
 // const ContactPage = lazy(() => import("../pages/ContactPage"));
@@ -9,37 +11,26 @@ const HomePage = lazy(() => import("../pages/HomePage"));
 const routes: RouteObject[] = [
   {
     path: "/",
-    element: (
-      <Suspense fallback={<div>Loading...</div>}>
-        <HomePage />
-      </Suspense>
-    ),
-    index: true,
+    element: <Layout />,
+    children: [
+      {
+        index: true,
+        element: <HomePage />,
+      },
+      // {
+      //   path: "about",
+      //   element: <AboutPage />,
+      // },
+      // {
+      //   path: "contact",
+      //   element: <ContactPage />,
+      // },
+    ],
   },
-  //   {
-  //     path: "/about",
-  //     element: (
-  //       <Suspense fallback={<div>Loading...</div>}>
-  //         <AboutPage />
-  //       </Suspense>
-  //     ),
-  //   },
-  //   {
-  //     path: "/contact",
-  //     element: (
-  //       <Suspense fallback={<div>Loading...</div>}>
-  //         <ContactPage />
-  //       </Suspense>
-  //     ),
-  //   },
-  //   {
-  //     path: "*",
-  //     element: (
-  //       <Suspense fallback={<div>Loading...</div>}>
-  //         <NotFoundPage />
-  //       </Suspense>
-  //     ),
-  //   },
+  // {
+  //   path: "*",
+  //   element: <NotFoundPage />,
+  // },
 ];
 
 export default routes;
