@@ -9,7 +9,7 @@ function Navbar() {
   const ButtonBoxRef = useRef(null)
   const [currentTab, setcurrentTab] = useState(tabs[0])
   return <>
-    <AppBar elevation={0}>
+    <AppBar elevation={0} position="static">
       <Toolbar sx={{ minHeight: 'fit-content' }}>
         <Typography>
           NCompass
@@ -65,7 +65,7 @@ function Navbar() {
         {
           tabs.map((value, index) => {
             return <Box
-             
+             key={index}
               alignItems={"center"}
             >
               <Button
