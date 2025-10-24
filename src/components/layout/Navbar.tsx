@@ -54,7 +54,7 @@ function Navbar() {
             marginLeft: "auto"
           }}
         >
-          <Notifications fontSize="medium" />
+          <Notifications fontSize="medium" sx={{marginRight:"10px"}}/>
           <AccountCircle fontSize="medium" />
         </Box>
 
