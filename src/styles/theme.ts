@@ -23,6 +23,9 @@ const theme: Theme = createTheme({
     },
   },
   typography:{
+    allVariants:{
+      color:"white"
+    },
     h6:{
       fontWeight:"lighter",
       fontSize:"12px"
