@@ -7,6 +7,12 @@ const theme: Theme = createTheme({
     },
     secondary: {
       main: "#0a1d2c",
+
+    },
+
+    text:{
+      primary:"#fff",
+      secondary:"#0a1d2c"
     },
     error: {
       main: "#d32f2f",
@@ -16,6 +22,12 @@ const theme: Theme = createTheme({
       paper: "#ffffff",
     },
   },
+  typography:{
+    h6:{
+      fontWeight:"lighter",
+      fontSize:"12px"
+    }
+  }
 });
 
 export default theme;
