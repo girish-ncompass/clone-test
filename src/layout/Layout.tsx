@@ -1,18 +1,25 @@
-import { ThemeProvider, CssBaseline } from "@mui/material";
+import { ThemeProvider, CssBaseline, Box } from "@mui/material";
 import { Outlet } from "react-router-dom";
 
 import Navbar from "../components/layout/Navbar";
 import theme from "../styles/theme";
+import MySidebar from "../components/layout/Sidebar";
 
 function Layout() {
   return (
     <ThemeProvider theme={theme}>
-      <CssBaseline>
-        <Navbar />
-        <main>
-          <Outlet />
-        </main>
-      </CssBaseline>
+      <CssBaseline />
+      <Box sx={{ display: "flex" }}>
+        <Box component="aside">
+          <MySidebar />
+        </Box>
+        <Box sx={{ width: "100%" }}>
+          <Navbar />
+          <Box component="main">
+            <Outlet />
+          </Box>
+        </Box>
+      </Box>
     </ThemeProvider>
   );
 }
